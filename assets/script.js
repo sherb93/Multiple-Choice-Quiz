@@ -71,7 +71,7 @@ const displayQuestion = () => {
     // Creates and appends question
     const questionEl = document.createElement("h3");
     questionEl.textContent = questionsArray[currentQuestion][0];
-    quizHeaderEl.append(questionEl);
+    quizHeaderEl.prepend(questionEl);
 
     // Creates and appends 4 choices
     for (i = 0; i < 4; i++) {
@@ -102,20 +102,28 @@ const answerResponse = event => {
         choice.style.background = "red";
     }
 
-
+    currentQuestion++;
     createNextBtn(); 
-    pauseTimer();
+    // pauseTimer();
 }
 
 const createNextBtn = () => {
     const nextBtn = document.createElement("button");
     nextBtn.textContent = "NEXT";
     nextBtn.addEventListener("click", () => {
-        clearPrevious(); // Clears page
+        quizHeaderEl.removeChild(quizHeaderEl.firstChild); // Removes question but keeps timer
+        clearChildren(choicesEl); // Clears choices
         displayQuestion(); // Sets next question
+        clearChildren(proceedEl); // Clears next button
     });
     proceedEl.append(nextBtn);
 }
+
+const clearChildren = containerEl => {
+    while (containerEl.firstChild) {
+        containerEl.removeChild(containerEl.firstChild);
+    };
+};
 
 // Start button on the homepage
 startBtn.addEventListener("click", startQuiz);
