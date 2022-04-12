@@ -54,6 +54,7 @@ const questionsArray = [
 // Variables used for calling unique questions and choices each time displayQuestion() is called
 let currentQuestion = 0;
 let currentChoice = 1;
+let timer = 60;
 
 
 //////////// QUIZ PAGE FUNCTIONS /////////////////
@@ -74,21 +75,47 @@ const displayQuestion = () => {
 
     // Creates and appends 4 choices
     for (i = 0; i < 4; i++) {
-        const choice = document.createElement("button");
-        choice.textContent = `${currentChoice}. ${questionsArray[currentQuestion][currentChoice]}`;
-        choice.setAttribute("data-number", currentChoice)
-        choicesEl.append(choice);
+        const choiceBtn = document.createElement("button");
+        choiceBtn.textContent = `${currentChoice}. ${questionsArray[currentQuestion][currentChoice]}`;
+        choiceBtn.setAttribute("data-number", currentChoice)
+        choiceBtn.addEventListener("click", answerResponse)
+        choicesEl.append(choiceBtn);
         
-        // Increases currentChoice so that each button is unique
-        currentChoice++;
+        currentChoice++; // Increases currentChoice so that each button is unique
+
     }
 
     // Reverts currentChoice back to default for the next question
     currentChoice = 1;
 }
 
+// Function that reacts to the users selection
+const answerResponse = event => {
+    const choice = event.currentTarget;
+    const choiceValue = event.currentTarget.getAttribute("data-number");
+    const answer = questionsArray[currentQuestion][5];
+
+    // Sets the color of the choice if true or false
+    if (choiceValue === answer) {
+        choice.style.background = "green";
+    } else {
+        choice.style.background = "red";
+    }
 
 
+    createNextBtn(); 
+    pauseTimer();
+}
+
+const createNextBtn = () => {
+    const nextBtn = document.createElement("button");
+    nextBtn.textContent = "NEXT";
+    nextBtn.addEventListener("click", () => {
+        clearPrevious(); // Clears page
+        displayQuestion(); // Sets next question
+    });
+    proceedEl.append(nextBtn);
+}
 
 // Start button on the homepage
 startBtn.addEventListener("click", startQuiz);
