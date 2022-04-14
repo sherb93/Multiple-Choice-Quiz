@@ -9,6 +9,10 @@ const proceedEl = document.getElementById("proceed-container");
 const questionEl = document.getElementById("question");
 const timerEl = document.getElementById("timer");
 
+// Leaderboards Variables
+const scoreEl = document.getElementById("final-score");
+const formEl = document.getElementById("submit-score");
+
 
 // Nested arrays for easier reference
 const questionsArray = [
@@ -107,8 +111,10 @@ const displayQuestion = () => {
 
 // Function that reacts to the users selection
 const answerResponse = event => {
-    clearInterval(timerID); // Pauses the timer
+    clearInterval(timerID); // Pauses timer
+    choicesEl.childNodes.forEach(button => button.removeEventListener("click", answerResponse)); // Deactivates other buttons
 
+    // Variables
     const choice = event.currentTarget;
     const choiceValue = event.currentTarget.getAttribute("data-number");
     const answer = questionsArray[currentQuestion][5];
@@ -118,9 +124,12 @@ const answerResponse = event => {
         choice.style.background = "green";
     } else {
         choice.style.background = "red";
+        time -= 10;
+        timerEl.textContent = `Score: ${time.toFixed([2])}`;
     }
 
     currentQuestion++;
+    choicesEl.childNodes.forEach(button => button.removeEventListener("click", answerResponse));
     createNextBtn(); 
 }
 
@@ -129,11 +138,10 @@ const createNextBtn = () => {
     const nextBtn = document.createElement("button");
     nextBtn.textContent = "NEXT";
     nextBtn.addEventListener("click", () => {
-        quizHeaderEl.textContent = ""; // Clears question
-        clearChildren(choicesEl); // Clears choices
-
-        // Sets next question unless last question
+        // Sets next question unless it's the last question
         if (currentQuestion < questionsArray.length) {
+            quizHeaderEl.textContent = ""; // Clears question
+            clearChildren(choicesEl); // Clears choices
             displayQuestion();
             timerID = setInterval(countDown, 10);
         } else {
@@ -143,6 +151,14 @@ const createNextBtn = () => {
         clearChildren(proceedEl); // Clears next button
     });
     proceedEl.append(nextBtn);
+}
+
+const endQuiz = function() {
+    location.href = "leaderboards.html";
+    console.log(scoreEl)
+    console.log(time)
+    scoreEl.textContent = `Final Score: ${time}`;
+
 }
 
 // Used to remove all button elements from the page
