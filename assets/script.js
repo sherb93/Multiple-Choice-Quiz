@@ -3,6 +3,8 @@
 const homeEl = document.getElementById("homepage");
 const startBtn = document.getElementById("start-btn");
 const quizEl = document.getElementById("quizpage");
+const resultsEl = document.getElementById("results-page");
+
 const quizHeaderEl = document.getElementById("quiz-header");
 const choicesEl = document.getElementById("choices-container");
 const proceedEl = document.getElementById("proceed-container");
@@ -71,6 +73,7 @@ let timerID; // Needed to identify
 const startQuiz = () => {
     homeEl.style.display = "none";
     quizEl.style.display = "block";
+    resultsEl.style.display = "none";
 
     displayQuestion();
 
@@ -154,10 +157,38 @@ const createNextBtn = () => {
 }
 
 const endQuiz = function() {
-    location.href = "leaderboards.html";
-    console.log(scoreEl)
-    console.log(time)
+    homeEl.style.display = "none";
+    quizEl.style.display = "none";
+    resultsEl.style.display = "block";
+
     scoreEl.textContent = `Final Score: ${time}`;
+    formEl.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        if (!localStorage.getItem("scores")) {
+            const user = document.getElementById("initials").value;
+            const userData = {
+                name: user,
+                score: time,
+            };
+            let scoresArray = [];
+            scoresArray.push(userData);
+            localStorage.setItem("scores", JSON.stringify(scoresArray));
+        } else {
+            console.log("hey");
+            const user = document.getElementById("initials").value;
+            const userData = {
+                name: user,
+                score: time,
+            };
+
+            let scoresArray = (localStorage.getItem("scores"));
+            let test = JSON.parse(scoresArray)
+            console.log(test);
+            test.push(userData);
+            localStorage.setItem("scores", JSON.stringify(test));
+        }
+    })
 
 }
 
