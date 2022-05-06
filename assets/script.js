@@ -161,36 +161,41 @@ const endQuiz = function() {
     quizEl.style.display = "none";
     resultsEl.style.display = "block";
 
-    scoreEl.textContent = `Final Score: ${time}`;
+    scoreEl.textContent = `Final Score: ${time.toFixed([2])}`;
     formEl.addEventListener("submit", (event) => {
         event.preventDefault();
 
         if (!localStorage.getItem("scores")) {
-            const user = document.getElementById("initials").value;
+            const user = document.getElementById("initials").value.trim();
             const userData = {
                 name: user,
-                score: time,
+                score: time.toFixed([2]),
             };
             let scoresArray = [];
             scoresArray.push(userData);
             localStorage.setItem("scores", JSON.stringify(scoresArray));
         } else {
-            console.log("hey");
-            const user = document.getElementById("initials").value;
+            const user = document.getElementById("initials").value.trim();
             const userData = {
                 name: user,
-                score: time,
+                score: time.toFixed([2]),
             };
 
             let scoresArray = (localStorage.getItem("scores"));
-            let test = JSON.parse(scoresArray)
-            console.log(test);
-            test.push(userData);
-            localStorage.setItem("scores", JSON.stringify(test));
-        }
-    })
+            let scores = JSON.parse(scoresArray);
+            scores.push(userData);
+            localStorage.setItem("scores", JSON.stringify(scores));
+        };
+
+        loadHighScores();
+    });
+};
+
+const loadHighScores = function() {
+    window.location.href = "/leaderboards.html";
 
 }
+
 
 // Used to remove all button elements from the page
 const clearChildren = containerEl => {
