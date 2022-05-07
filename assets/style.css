@@ -5,3 +5,26 @@
 #results-page {
     display: none;
 }
+
+main {
+    padding: 10em;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 25em;
+    text-align: center;
+}
+
+th, td {
+    border: 1px solid black;
+    font-weight: 600;
+}
+
+td {
+    padding: 1em;
+    min-width: 100px;
+    font-size: 18px;
+}
