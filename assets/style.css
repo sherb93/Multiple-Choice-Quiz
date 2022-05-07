@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;400;600&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inconsolata', monospace;
+}
+
+
 #quizpage {
     display: none;
 }
@@ -7,15 +16,61 @@
 }
 
 main {
-    padding: 10em;
+    padding: 2em 10em;
+}
+
+#homepage {
+    background-image: url("./images/green-code.jpg");
+    height: 100vh;
+}
+
+#intro {
+    background: grey;
+    border: 5px solid white;
+    border-radius: 10px;
+    opacity: 0.95;
+    text-align: center;
+    padding: 1em;
+}
+
+#intro > h1 {
+    font-weight: 900;
+    letter-spacing: 20px;
+    margin-bottom: 1em;
+    color: #273024;
+    text-transform: uppercase;
+}
+
+#intro > p {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+#start-btn {
+    padding: 0.5em 2em;
+    font-size: 1.8em;
+    border: 3px solid black;
+    border-radius: 20px;
+    box-shadow: 3px 3px 9px 3px #000000;
+    transition-duration: 20ms;
+}
+
+#start-btn:active {
+    transform: scale(0.95, 0.95);
 }
 
 .flex-container {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    padding: 0 25em;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
     text-align: center;
+}
+
+.highscores {
+    min-width: 500px;
+    max-width: 500px;
 }
 
 th, td {
@@ -24,7 +79,7 @@ th, td {
 }
 
 td {
-    padding: 1em;
-    min-width: 100px;
-    font-size: 18px;
+    padding: 0.5em;
+    min-width: 200px;
+    font-size: 2em;
 }
