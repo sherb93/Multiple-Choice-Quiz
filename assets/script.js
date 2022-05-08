@@ -89,7 +89,7 @@ const countDown = () => {
         time = 0;
         endQuiz();
     }
-}
+};
 
 // Function used each time a new question needs to be pulled
 const displayQuestion = () => {
@@ -111,7 +111,7 @@ const displayQuestion = () => {
 
     // Reverts currentChoice back to default for the next question
     currentChoice = 1;
-}
+};
 
 // Function that reacts to the users selection
 const answerResponse = event => {
@@ -135,7 +135,7 @@ const answerResponse = event => {
     currentQuestion++;
     choicesEl.childNodes.forEach(button => button.removeEventListener("click", answerResponse));
     createNextBtn(); 
-}
+};
 
 // Shows result of users choice and adds next button
 const createNextBtn = () => {
@@ -155,7 +155,7 @@ const createNextBtn = () => {
         clearChildren(proceedEl); // Clears next button
     });
     proceedEl.append(nextBtn);
-}
+};
 
 const endQuiz = function() {
     homeEl.style.display = "none";
