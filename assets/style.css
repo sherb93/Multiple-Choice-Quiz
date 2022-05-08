@@ -6,7 +6,6 @@
     font-family: 'Inconsolata', monospace;
 }
 
-
 #quizpage {
     display: none;
 }
@@ -21,7 +20,8 @@ main {
 
 #homepage {
     background-image: url("./images/green-code.jpg");
-    height: 100vh;
+    height: 100%;
+    width: 100%;
 }
 
 #intro {
@@ -30,20 +30,23 @@ main {
     border-radius: 10px;
     opacity: 0.95;
     text-align: center;
-    padding: 1em;
+    padding: 3em 3em;
+    margin-bottom: 3em;
 }
 
 #intro > h1 {
     font-weight: 900;
+    font-size: 4em;
     letter-spacing: 20px;
-    margin-bottom: 1em;
+    margin-bottom: 0.6em;
     color: #273024;
     text-transform: uppercase;
 }
 
 #intro > p {
-    font-size: 40px;
+    font-size: 2em;
     font-weight: 600;
+    margin-bottom: 1em;
 }
 
 #start-btn {
@@ -53,6 +56,7 @@ main {
     border-radius: 20px;
     box-shadow: 3px 3px 9px 3px #000000;
     transition-duration: 20ms;
+    letter-spacing: 0.3em;
 }
 
 #start-btn:active {
