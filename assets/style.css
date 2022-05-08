@@ -106,6 +106,7 @@ td {
     #intro {
         height: 100%;
         display: flex;
+        padding: 1em;
         flex-direction: column;
         justify-content: space-around;
         margin-bottom: 0px;
@@ -113,10 +114,12 @@ td {
 
     #intro > h1 {
         font-size: 7vw;
+        margin-bottom: 0;
     }
     
     #intro > p {
-        font-size: 5vw;
+        font-size: 4vw;
+        margin-bottom: 0em;
     }
 
     #start-btn {
