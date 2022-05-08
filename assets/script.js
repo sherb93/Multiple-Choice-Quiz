@@ -193,7 +193,7 @@ const endQuiz = function() {
 };
 
 const loadHighScores = function() {
-    window.location.href = "/leaderboards.html";
+    window.location.href = "/Multiple-Choice-Quiz/leaderboards.html";
 };
 
 
