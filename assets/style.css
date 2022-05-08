@@ -98,7 +98,7 @@ td {
     font-size: 2em;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 600px) {
     main {
         padding: 4em 2em;
     }
