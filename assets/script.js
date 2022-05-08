@@ -193,8 +193,7 @@ const endQuiz = function() {
 
 const loadHighScores = function() {
     window.location.href = "/leaderboards.html";
-
-}
+};
 
 
 // Used to remove all button elements from the page
