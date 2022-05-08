@@ -84,7 +84,9 @@ const startQuiz = () => {
 const countDown = () => {
     timerEl.textContent = `Score: ${time.toFixed([2])}`; // toFixed keeps it confined to 2 decimal places
     time -= 0.01;
-    if (time === 0) {
+    if (time < 0) {
+        clearInterval(timerID);
+        time = 0;
         endQuiz();
     }
 }
@@ -105,7 +107,6 @@ const displayQuestion = () => {
         choicesEl.append(choiceBtn);
         
         currentChoice++; // Increases currentChoice so that each button is unique
-
     }
 
     // Reverts currentChoice back to default for the next question
