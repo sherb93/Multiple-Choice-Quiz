@@ -17,4 +17,7 @@ This was made during the beginning of my coding journey so I think I'll ramp up 
 ![quizpage](https://user-images.githubusercontent.com/95831392/169171573-df5a90a1-51a8-42f9-ad12-218ebb17c30e.PNG)
 
 ## Usage
-The app is deployed to GitHub pages for your enjoyment. If you would like to fork or clone this repo please feel free.
+The app is deployed to GitHub pages for your enjoyment.
+URL: https://sherb93.github.io/Multiple-Choice-Quiz/
+
+If you would like to fork or clone this repo please feel free.
