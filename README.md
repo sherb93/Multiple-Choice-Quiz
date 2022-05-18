@@ -12,10 +12,8 @@ A big challenge for me during this project was figuring out that the order of fu
 This was made during the beginning of my coding journey so I think I'll ramp up the difficulty in a future commit. For now it's five basic questions, but I hope you enjoy it!
 
 ## Images
-Home Page
 ![homepage](https://user-images.githubusercontent.com/95831392/169171531-4b6f117f-d802-48c7-8426-1c8062004e7b.PNG)
 
-Quiz Page
 ![quizpage](https://user-images.githubusercontent.com/95831392/169171573-df5a90a1-51a8-42f9-ad12-218ebb17c30e.PNG)
 
 ## Usage
