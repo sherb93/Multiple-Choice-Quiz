@@ -103,6 +103,7 @@ const displayQuestion = () => {
         const choiceBtn = document.createElement("button");
         choiceBtn.textContent = `${currentChoice}. ${questionsArray[currentQuestion][currentChoice]}`;
         choiceBtn.setAttribute("data-number", currentChoice)
+        choiceBtn.classList.add("option-btn");
         choiceBtn.addEventListener("click", answerResponse);
         choicesEl.append(choiceBtn);
         
@@ -140,11 +141,12 @@ const answerResponse = event => {
 // Shows result of users choice and adds next button
 const createNextBtn = () => {
     const nextBtn = document.createElement("button");
+    nextBtn.classList.add("next-btn");
     nextBtn.textContent = "NEXT";
     nextBtn.addEventListener("click", () => {
         // Sets next question unless it's the last question
         if (currentQuestion < questionsArray.length) {
-            quizHeaderEl.textContent = ""; // Clears question
+            questionEl.textContent = ""; // Clears question
             clearChildren(choicesEl); // Clears choices
             displayQuestion();
             timerID = setInterval(countDown, 10);

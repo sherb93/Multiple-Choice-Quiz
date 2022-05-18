@@ -11,7 +11,7 @@ html, body {
     width: 100%;
 }
 
-
+/*/////// DEFAULT DISPLAY ////////////*/
 #quizpage {
     display: none;
 }
@@ -24,6 +24,7 @@ main {
     padding: 2em 10em;
 }
 
+/*/////// HOMEPAGE ////////////*/
 #homepage {
     background-image: url("./images/green-code.jpg");
     height: calc(100% - 56px);
@@ -73,6 +74,80 @@ main {
     transform: scale(0.95, 0.95);
 }
 
+
+/*//////// QUIZ PAGE //////////*/
+#quizpage {
+    background-image: url("./images/blue-code.jpg");
+    height: 100%;
+    width: 100%;
+}
+
+#body-container {
+    border: 5px solid white;
+    padding: 1em;
+    background: grey;
+    color: white;
+    margin: auto;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    opacity: 0.95;
+}
+
+#quiz-header {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#choices-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    gap: 5px;
+}
+
+.option-btn {
+    width: 75%;
+    text-align: left;
+    padding: 0.5em 0.5em;
+    border-radius: 5px;
+}
+
+.next-btn {
+    padding: 0.5em 0.5em;
+    border-radius: 5px;
+    margin-top: 1em;
+}
+
+
+
+/*////////SUBMISSIONS PAGE////////////*/
+#results-page {
+    background-image: url("./images/green-code.jpg");
+    height: calc(100% - 56px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+
+
+/*//////// LEADERBOARDS //////////*/
+#leaderboards-page {
+    background-image: url("./images/green-code.jpg");
+    height: calc(100% - 56px);
+    width: 100%;
+    color: white;
+}
+
 .flex-container {
     display: flex;
     flex-direction: column;
@@ -82,13 +157,14 @@ main {
     text-align: center;
 }
 
-.highscores {
-    min-width: 500px;
-    max-width: 500px;
+#highscores {
+    border: 3px solid white;
+    background-color: gray;
+    opacity: 0.9;
 }
 
 th, td {
-    border: 1px solid black;
+    border: 1px solid white;
     font-weight: 600;
 }
 
@@ -99,7 +175,7 @@ td {
 }
 
 @media only screen and (max-width: 600px) {
-    main {
+    #homepage {
         padding: 4em 2em;
     }
 
