@@ -136,6 +136,17 @@ main {
     color: white;
 }
 
+.submit-btn {
+    padding: 2px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+#initials {
+    width: 80px;
+    text-align: center;
+}
+
 
 
 /*//////// LEADERBOARDS //////////*/
