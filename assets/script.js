@@ -27,11 +27,11 @@ const questionsArray = [
         "2"
     ],
     [
-        "What is the proper JavaScript syntax for calling an object method?",
-        ".method()",
-        "[method()]",
-        "#method",
-        ".method{}",
+        "CSS has a property named display. Which display value will remove an element from the page?",
+        "none",
+        "hide",
+        "invisible",
+        "eject",
         "1"
     ],
     [
@@ -43,15 +43,15 @@ const questionsArray = [
         "3"
     ],
     [
-        "What type of Web Developer is specifically in charge of client-side development?",
-        "User-Side",
-        "Back-End",
-        "Full-Stack",
-        "Front-End",
+        "Which of these is NOT a variable declaration in JavaScript",
+        "var",
+        "let",
+        "const",
+        "int",
         "4"
     ],
     [
-        "Which of these is a popular JavaScript library?",
+        "Which of these is a well-known JavaScript library?",
         "Bootstrap",
         "jQuery",
         "Tailwind",
