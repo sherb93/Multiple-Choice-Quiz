@@ -78,7 +78,7 @@ main {
 /*//////// QUIZ PAGE //////////*/
 #quizpage {
     background-image: url("./images/blue-code.jpg");
-    height: 100%;
+    height: 100vh;
     width: 100%;
 }
 
@@ -132,9 +132,7 @@ main {
     background-image: url("./images/green-code.jpg");
     height: calc(100% - 56px);
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: none;
     color: white;
 }
 
@@ -186,6 +184,32 @@ td {
         flex-direction: column;
         justify-content: space-around;
         margin-bottom: 0px;
+    }
+
+    #quizpage {
+        padding: 2px;
+    }
+
+    #body-container {
+        margin: 10px 1px 2px 1px;
+        width: 100%;
+    }
+
+    #results-page {
+        padding: 35px 0px 0px;
+    }
+
+    #results-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #submit-score {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
     }
 
     #intro > h1 {

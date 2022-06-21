@@ -10,4 +10,10 @@ A big challenge for me during this project was figuring out that the order of fu
 This was made during the beginning of my coding journey so I think I'll ramp up the difficulty in a future commit. For now it's five basic questions, but I hope you enjoy it!
 
 ## Usage
-The app is deployed to GitHub pages for your enjoyment. If you would like to fork or clone this repo please feel free.
+The app is deployed to GitHub pages.
+
+**Instructions**:
+1. Click this [github pages link](https://sherb93.github.io/Multiple-Choice-Quiz/).
+2. Click "startQuiz()"
+3. A timer will start and you must answer 5 questions. Each incorrect answer will reduce your timer by 10 seconds.
+4. Local storage will house your top five scores on the leaderboards page.
